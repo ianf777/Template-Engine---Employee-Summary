@@ -114,7 +114,7 @@ const employeeQuestions = [
 ]
 
 function buildTeamList() {
-    inquire.prompt(employeeQuestions).then(employeeInfo => {
+    inquirer.prompt(employeeQuestions).then(employeeInfo => {
         if (employeeInfo.role == "engineer") {
             var newMember = new Engineer(employeeInfo.name, teamList.length + 1, employeeInfo.email, employeeInfo.github);
         } else {
@@ -165,7 +165,7 @@ function buildHtmlCard(memberType, name, id, email, propertyValue) {
 }
 
 function init() {
-    inquire.prompt(managerQuestions).then(managerInfo => {
+    inquirer.prompt(managerQuestions).then(managerInfo => {
         let teamManager = new Manager(managerInfo.name, 1, managerInfo.email, managerInfo.officeNum);
         teamList.push(teamManager);
         console.log(" ");
